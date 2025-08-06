@@ -1,0 +1,139 @@
+<div class="container mx-auto px-4 sm:px-8">
+  <div class="py-8">
+    <div class="flex justify-between">
+      <h2 class="text-2xl font-semibold leading-tight">Candidates</h2>
+      <button (click)="addCandidate()" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+        Add Candidate
+      </button>
+    </div>
+    <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+      <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+        <table class="min-w-full leading-normal">
+          <thead>
+            <tr>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                ID
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                First Name
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Last Name
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Document Type
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Document Number
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                RH
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Date of Birth
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Birth City
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Home City
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Shipping City
+              </th>
+              <th
+                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let candidate of candidates">
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">{{ candidate.id }}</p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.first_name }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.last_name }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.document_type }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.document_number }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">{{ candidate.rh }}</p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.date_of_birth | date:'yyyy-MM-dd' }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.birth_city }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.home_city }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
+                  {{ candidate.shipping_city }}
+                </p>
+              </td>
+              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <button
+                  (click)="editCandidate(candidate)"
+                  class="text-indigo-600 hover:text-indigo-900"
+                >
+                  Edit
+                </button>
+                <button
+                  (click)="deleteCandidate(candidate)"
+                  class="text-red-600 hover:text-red-900 ml-2"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
